@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BILL Q&A</title>
+        <style>
+            .terminal-output{
+                font-family:monospace;
+                white-space:pre;
+                background:#000;
+                color:#0f0;
+                padding:20px;
+                border: radius 5px;
+                margin-top:20px; 
+                overflow-x:auto;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>SPEND VIEW</h1>
+        <form action="/que" method="POST" enctype="multipart/form-data">
+            <label>Upload Bill Image</label><br>
+            <input type="file" name="bill" accept="image/*" required><br><br>
+            <label>Your Question</label><br>
+            <input type="text" name="question" placeholder="eg.what is the total amount?" required><br><br>
+            <button type="submit">Ask SpendView</button>
+        </form>
+        {% if answer1 %}
+        <h2>Answer : </h2>
+       <div class='terminal-output'><p>{{answer1}}</p></div>
+        {% endif %}
+    </body>
+</html>

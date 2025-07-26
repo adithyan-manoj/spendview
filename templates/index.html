@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spendview</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Main content area -->
+        <div class="main-content">
+            <!-- Large rounded container -->
+            <div class="content-card">
+                <div class="display-area">
+                    <div class="display-header">
+                        <h2>Data Display</h2>
+                        <button class="clear-btn" id="clearBtn">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                    <div class="display-content" id="displayContent">
+                        <!-- Initial welcome message -->
+                        <div class="welcome-message" id="welcomeMessage">
+                            <i class="fas fa-database"></i>
+                            <p>Enter data below to see it displayed here</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom input area -->
+        <div class="input-container">
+            <div class="input-wrapper">
+                <!-- Camera icon -->
+                <button class="icon-button" id="cameraBtn">
+                    <i class="fas fa-camera"></i>
+                </button>
+                <input type="file" id="billInput" name="bill" style="display:none;" accept="image/*" form="dataForm">
+
+                <!-- Input field -->
+                <textarea id="dataInput" class="data-input" placeholder="Type your message..." rows="1"></textarea>
+
+                <!-- Action buttons -->
+                    <div class="action-buttons">
+                    <button class="icon-button enter-btn" id="enterBtn" title="Submit data" type="button">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                    <button class="icon-button" id="micBtn">
+                        <i class="fas fa-microphone" id="micIcon"></i>
+                    </button>
+                    <button class="icon-button stop-btn" id="stopBtn" style="display: none;">
+                        <i class="fas fa-stop"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden form for submission -->
+    <form id="dataForm" action="/que" method="POST" enctype="multipart/form-data" style="display:none;"></form>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

@@ -1,5 +1,5 @@
 # Core AI & Transcription
-torch==2.7.1+cu118
+torch==2.7.1
 openai-whisper==20250625
 ffmpeg-python==0.2.0
 

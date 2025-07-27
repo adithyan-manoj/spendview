@@ -1,3 +1,4 @@
 .env
 cert.pem
+key.pem
 gemini-test-466818-34f18953ebbb.json

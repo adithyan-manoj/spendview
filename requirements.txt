@@ -10,6 +10,7 @@ google-cloud-firestore
 # Flask
 Flask
 flask-cors
+gunicorn
 
 # Image processing
 Pillow

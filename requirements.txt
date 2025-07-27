@@ -1,0 +1,18 @@
+# Core AI & Transcription
+torch
+openai-whisper
+ffmpeg-python
+
+# Google Generative AI and Firestore
+google-generativeai
+google-cloud-firestore
+
+# Flask
+Flask
+flask-cors
+
+# Image processing
+Pillow
+
+# Environment variables
+python-dotenv

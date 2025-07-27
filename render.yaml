@@ -1,0 +1,34 @@
+services:
+  - type: web
+    name: your-app-name # You can change this to your app's name
+    env: python
+    plan: free # Or your desired plan
+    buildCommand: |
+      apt-get update && apt-get install -y portaudio19-dev
+      pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: GEMINI_API_KEY
+        fromSecret: true
+      - key: PROJECT_ID
+        fromSecret: true
+      - key: TYPE
+        fromSecret: true
+      - key: PRIVATE_KEY_ID
+        fromSecret: true
+      - key: PRIVATE_KEY
+        fromSecret: true
+      - key: CLIENT_EMAIL
+        fromSecret: true
+      - key: CLIENT_ID
+        fromSecret: true
+      - key: AUTH_URI
+        fromSecret: true
+      - key: TOKEN_URI
+        fromSecret: true
+      - key: AUTH_PROVIDER_CERT_URL
+        fromSecret: true
+      - key: CLIENT_CERT_URL
+        fromSecret: true
+      - key: UNIVERSE_DOMAIN
+        fromSecret: true
